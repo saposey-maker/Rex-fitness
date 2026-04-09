@@ -21,7 +21,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
-<script type="text/babel">
+<script type="text/babel" data-presets="react">
 const { useState, useEffect, useRef } = React;
 
 const DEFAULT_EXERCISES = [
@@ -322,7 +322,7 @@ Go to Date
 }
 
 // ── app ───────────────────────────────────────────────────────
-export default function App() {
+function App() {
 const [activeDate, setActiveDate] = useState(todayStr());
 const isToday = activeDate === todayStr();
 
@@ -776,13 +776,12 @@ return (
     </button>
   </div>
 </div>
-
+```
 
 );
 }
 
-const root = ReactDOM.createRoot(document.getElementById(‘root’));
-root.render(React.createElement(App));
+ReactDOM.createRoot(document.getElementById(‘root’)).render(React.createElement(App));
 </script>
 
 </body>
